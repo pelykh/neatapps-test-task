@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector, useCallback} from 'react-redux';
 import api from './api';
 import ItemDetails from './components/ItemDetails';
+import ListItem from './components/ListItem';
 
 const App = () => {
   const items = useSelector((state) => state.items);
@@ -18,27 +19,7 @@ const App = () => {
 
 
   // TODO Consider moving into separate component
-  const listItems = items.map((item) => {
-    const selected = currentItem && currentItem.id === item.id;
-
-    return (
-      <li
-        key={item.id}
-        onClick={() => handleClick(item)}
-        className={`item ${selected ? 'selected' : ''}`}
-      >
-        <p className="text">
-          <img src="images/active.svg"/>
-          <span>{item.name}</span>
-        </p>
-        {
-          selected
-            ? <img src="images/arrow-right.svg" alt=">"/>
-            : null
-        }
-      </li>
-    )
-  });
+  const listItems = items.map((item) => <ListItem {...{item, currentItem, handleClick}}/>);
 
   return (
     <div>
