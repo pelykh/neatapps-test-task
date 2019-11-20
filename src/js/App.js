@@ -16,18 +16,36 @@ const App = () => {
     dispatch(api.fetchCurrentItem(item.id));
   };
 
-  const listItems = items.map((item) =>
-    <li
-      key={item.id}
-      onClick={() => handleClick(item)}
-    >
-      {item.name}
-    </li>
-  );
+
+  // TODO Consider moving into separate component
+  const listItems = items.map((item) => {
+    const selected = currentItem && currentItem.id === item.id;
+
+    return (
+      <li
+        key={item.id}
+        onClick={() => handleClick(item)}
+        className={`item ${selected ? 'selected' : '' }`}
+      >
+        <p className="text">
+          <img src="images/active.svg"/>
+          <span>{item.name}</span>
+        </p>
+        {
+          selected
+            ? <img src="images/arrow-right.svg" alt=">"/>
+            : null
+        }
+      </li>
+    )
+  });
 
   return (
-    <div>
-      <ul>{listItems}</ul>
+    <div className="app">
+      <div className="items-list">
+        <div className="title">Items</div>
+        <ul>{listItems}</ul>
+      </div>
       <ItemDetails item={currentItem}/>
     </div>
   );
