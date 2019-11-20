@@ -25,7 +25,7 @@ const App = () => {
       <li
         key={item.id}
         onClick={() => handleClick(item)}
-        className={`item ${selected ? 'selected' : '' }`}
+        className={`item ${selected ? 'selected' : ''}`}
       >
         <p className="text">
           <img src="images/active.svg"/>
@@ -41,12 +41,17 @@ const App = () => {
   });
 
   return (
-    <div className="app">
-      <div className="items-list">
-        <div className="title">Items</div>
-        <ul>{listItems}</ul>
+    <div>
+      <nav className="nav-bar">Demo App</nav>
+      <div className="page">
+        <div className="items-list">
+          <div className="title">Items</div>
+          <ul>{listItems}</ul>
+        </div>
+        <div className="details-wrapper">
+          <ItemDetails item={currentItem}/>
+        </div>
       </div>
-      <ItemDetails item={currentItem}/>
     </div>
   );
 };
