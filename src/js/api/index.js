@@ -8,6 +8,14 @@ function fetchItems() {
   );
 }
 
+function fetchCurrentItem(id) {
+  return (dispatch) => (
+    mock.get('/items', {id})
+      .then((data) => dispatch(actions.getCurrentItem(data)))
+  )
+}
+
 export default {
   fetchItems,
+  fetchCurrentItem,
 };

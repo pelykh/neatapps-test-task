@@ -1,4 +1,57 @@
-h1 {
-  color: #27aedb;
-  text-align: center;
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    background-color: #01CBA9;
+    color: white;
+    height: 100px;
+    padding: 0.8em;
+    font-size: 2em;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+
+    .title {
+      color: #4a8de0;
+    }
+
+    .label {
+      color: #c3c3c3;
+    }
+
+    .text, .action {
+      background-color: #f2f2f2;
+    }
+
+    .action {
+      list-style-type: none;
+      margin: 5px;
+      padding: 15px;
+    }
+
+    .text {
+      padding: 10px 20px;
+    }
+
+    .general-details {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .permitted-actions {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+  }
 }
