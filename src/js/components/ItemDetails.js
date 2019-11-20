@@ -19,7 +19,7 @@ const ItemDetails = ({item}) => {
       <div className="header">{item.name}</div>
       <div className="content">
         <div className="general-details">
-          <div className="title">GENERAL DETAILS ?</div>
+          <div className="title">GENERAL DETAILS <img src="images/help-12.svg" alt="?"/></div>
           <br/>
           <div className="label">NAME</div>
           <br/>
@@ -39,7 +39,7 @@ const ItemDetails = ({item}) => {
           <br/>
         </div>
         <div className="permitted-actions">
-          <div className="title">PERMITTED ACTIONS ?</div>
+          <div className="title">PERMITTED ACTIONS <img src="images/help-12.svg" alt="?"/></div>
           <br/><br/>
           <ul>{actionsListItems}</ul>
         </div>
