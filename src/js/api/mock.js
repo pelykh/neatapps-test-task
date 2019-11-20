@@ -6,7 +6,7 @@ const withActions = (item) => ({
     .map((i) => data.actions.find((action) => action.id === i)),
 });
 
-const get = (url, params={}) => (
+const get = async (url, params={}) => (
   params.id
     ? withActions(data.resources[params.id])
     : data.resources
